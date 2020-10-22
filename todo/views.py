@@ -38,5 +38,12 @@ def logoutuser(request):
         logout(request)
         return redirect('home')
 
+
+def createtodo(request):
+    if request.method == 'GET':
+        return render(request, 'todo/createtodo.html', {'form':AuthenticationForm()})
+    else:
+        pass
+
 def currenttodos(request):
     return render(request, 'todo/currenttodos.html')
